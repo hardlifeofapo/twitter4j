@@ -93,7 +93,7 @@ import static twitter4j.internal.json.z_T4JInternalParseUtil.*;
     }
 
     private void init(JSONObject json) throws TwitterException {
-        id = getLong("id", json);
+        id = Long.parseLong(getString("id_str", json) );
         source = getUnescapedString("source", json);
         createdAt = getDate("created_at", json);
         isTruncated = getBoolean("truncated", json);
